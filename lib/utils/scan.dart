@@ -75,8 +75,8 @@ class _ScanPageState extends State<ScanPage> {
         );
 
         if (texts.isNotEmpty) {
+          String expense = "";
           for(var text in texts){
-            String expense = "";
             if(text.value.contains('L202')){
               bool value = false;
              for(var txt in text.value.characters){
@@ -98,6 +98,7 @@ class _ScanPageState extends State<ScanPage> {
             }
 
           }
+          extractedTextToShow = "Expense Application : $expense";
         }
       } on Exception {
         print('Failed to recognize text.');
